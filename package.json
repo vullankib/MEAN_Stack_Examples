@@ -1,0 +1,27 @@
+{
+  "name": "mean_stack_examples-1",
+  "version": "1.0.0",
+  "description": "Node.js, Express and MongoDB sample API Creation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vullankib/MEAN_Stack_Examples.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "API"
+  ],
+  "author": "Bharath Vullanki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vullankib/MEAN_Stack_Examples/issues"
+  },
+  "homepage": "https://github.com/vullankib/MEAN_Stack_Examples#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.2.9"
+  }
+}
