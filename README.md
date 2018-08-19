@@ -1,2 +1,2 @@
 # MEAN_Stack_Examples
-Node JS, Express, Mongo DB Based Sample Project. Experimenting
+Node JS, Express, Mongo DB Based Sample Project. 
