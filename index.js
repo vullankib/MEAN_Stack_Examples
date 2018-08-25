@@ -2,7 +2,7 @@ import express from 'express';
 import routes from './src/routes/egRoutes';
 
 const app = express();
-const PORT = 8087;
+const PORT = 3000;
 
 routes(app);
 
