@@ -1,16 +1,18 @@
-import { addNewContact } from "../controllers/egController";
+import { addNewContact,getContacts } from "../controllers/egController";
 
 const routes = (app) => {
     // route for Contact
     app.route('/contact')
-    .get((req,res) =>
-    res.send('GET request successful!!'))
+    
+    // GET endpoint
+    .get(getContacts)
     
     // POST endpoint
     .post(addNewContact);
 
     // route for specific contactId
     app.route('/contact/:contactId')
+    
     .put((req,res) =>
     res.send('GET request successful!!'))
 
