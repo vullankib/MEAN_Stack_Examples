@@ -1,4 +1,4 @@
-import { addNewContact,getContacts } from "../controllers/egController";
+import { addNewContact,getContacts, getContactWithID, updateContact,deleteContact } from "../controllers/egController";
 
 const routes = (app) => {
     // route for Contact
@@ -12,11 +12,11 @@ const routes = (app) => {
 
     // route for specific contactId
     app.route('/contact/:contactId')
-    
-    .put((req,res) =>
-    res.send('GET request successful!!'))
+    // GET contact with ID
+    .get(getContactWithID)
 
-    .delete((req,res)=>
-    res.send('POST request successful!'));
+    .put(updateContact)
+
+    .delete(deleteContact);
 }
 export default routes;
