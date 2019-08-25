@@ -4,15 +4,16 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 // Send Objects or Data through HTTP Post to the database
 
-// test
+
 const app = express();
 const PORT = 3000;
 
 // Mongoose Connection
-mongoose.Promise=global.Promise;
-mongoose.connect('mongodb://localhost/egDB',{
-    userMongoClient:true
-});
+if ( mongoose.connect("mongodb://localhost:27017/egDB") === false )
+{
+useNewUrlParser: true 
+mongoose.connect(dbConn, { promiseLibrary: global.Promise }) === true
+}
 
 // bodyparser setup
 app.use(bodyParser.urlencoded({extended:true}));
