@@ -2,35 +2,27 @@ import express from 'express';
 import routes from './src/routes/egRoutes.js';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+require('dotenv').config();
 
-// Send Objects or Data through HTTP Post to the database
-
-
-const app = express();
+var app = express();
 const PORT = 3000;
-const url = MONGOLAB_URI;
-
-// // Mongoose Connection
-// if ( mongoose.connect(url) === false )
-// {
-// useNewUrlParser: true
-// mongoose.connect(dbConn, { promiseLibrary: global.Promise }) === true
-// }
-
-module.exports.connect = async dsn => mongoose.connection(dsn, {useNewUrlParser:true});
-
 
 // bodyparser setup
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
+mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true }).
+  catch(error => handleError(error));
+
+  mongoose.connection.on('error', err => {
+    logError(err);
+  });
+  console.log("Connected");
 
 routes(app);
+// // serving static files
+app.use(express.static('public'));
 
-app.get('/',(req,res)=>
-    res.send(`Node and Express server is running on port ${PORT}`)
-);
-
-app.listen(PORT,()=>
-    console.log(`your server is running on ${PORT}`)
+app.listen(PORT, () =>
+    console.log(`your server is running on port ${PORT}`)
 );
