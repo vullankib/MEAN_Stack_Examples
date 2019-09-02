@@ -1,5 +1,5 @@
 {
-  "name": "mean_stack_examples-1",
+  "name": "crmapp",
   "version": "1.0.0",
   "description": "Node.js, Express and MongoDB sample API Creation",
   "main": "index.js",
