@@ -5,7 +5,8 @@ import bodyParser from 'body-parser';
 require('dotenv').config();
 
 var app = express();
-const PORT = 3000;
+var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
 
 // bodyparser setup
 app.use(bodyParser.urlencoded({extended:true}));
@@ -23,6 +24,6 @@ routes(app);
 // // serving static files
 app.use(express.static('public'));
 
-app.listen(PORT, () =>
-    console.log(`your server is running on port ${PORT}`)
+app.listen(port, () =>
+    console.log(`your server is running on port ${port}`)
 );
