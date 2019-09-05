@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 require('dotenv').config();
 
 var app = express();
-var port = process.env.PORT || '3000';
+var port = process.env.PORT;
 app.set('port', port);
 
 // bodyparser setup
