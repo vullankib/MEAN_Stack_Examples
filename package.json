@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/vullankib/MEAN_Stack_Examples#readme",
   "dependencies": {
+    "angular": "^1.7.8",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
